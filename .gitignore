@@ -1,0 +1,13 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node (only if you later add tooling)
+node_modules/
+
+# Python cache (from the placeholder generator scripts)
+__pycache__/
+*.pyc

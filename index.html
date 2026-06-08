@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verve Intimate Society — VIP Rewards</title>
+  <meta name="description" content="The Verve Intimate Society — VIP Rewards. Earn credits every time you visit or share your love for the brand, and redeem them toward your next experience." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════ -->
+<nav style="background:var(--black);padding:0 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border-dark);">
+  <p style="font-family:'Cinzel',serif;font-size:13px;font-weight:400;letter-spacing:0.38em;text-transform:uppercase;color:var(--white);padding:18px 0;">Verve Intimate</p>
+  <div style="display:flex;align-items:stretch;gap:0;">
+    <a href="community.html" style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:20px 22px;border-left:1px solid var(--border-dark);transition:color 0.2s;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Inner Circle</a>
+    <a href="news-offers.html" style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:20px 22px;border-left:1px solid var(--border-dark);transition:color 0.2s;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">News &amp; Offers</a>
+    <a href="recent-shoots.html" style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:20px 22px;border-left:1px solid var(--border-dark);transition:color 0.2s;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Client Spotlight</a>
+    <a href="connect.html" style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:20px 22px;border-left:1px solid var(--border-dark);transition:color 0.2s;text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Connect</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg-img"></div>
+  <p class="hero-eyebrow" id="heroEyebrow">Welcome back</p>
+  <h1>Verve Intimate</h1>
+  <p class="hero-society">Society</p>
+  <p class="hero-tagline">A society for those who don't just own their power — they inspire others to find theirs.</p>
+  <p class="hero-desc">Earn credits every time you visit us or share your love for our brand.</p>
+  <div class="hero-btns">
+    <a href="#redeem" class="btn btn-accent" style="background:#4e1610;">Use Your Credits</a>
+    <a href="#tiers" class="btn btn-outline">View Tiers &amp; Perks</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     STUDIO IMAGE BAND  (swap: assets/images/img-studio.jpg = white bed studio set)
+══════════════════════════════════════════════ -->
+<div class="img-band" role="img" aria-label="Verve Intimate studio"></div>
+
+<!-- ══════════════════════════════════════════════
+     PROFILE DASHBOARD
+══════════════════════════════════════════════ -->
+<section class="section section-cream">
+  <div class="container">
+
+    <div class="tab-nav">
+      <button class="tab-btn active" data-nav="profile">Your Profile</button>
+      <button class="tab-btn" data-nav="history">Reward History</button>
+    </div>
+
+    <div class="profile-grid">
+
+      <!-- Card 1: Member info -->
+      <div class="profile-card">
+        <p class="profile-name" id="memberName">Valued Member</p>
+        <p class="profile-email" id="memberSince">Verve Intimate Society</p>
+        <div class="profile-stat">
+          <span>Member Status</span>
+          <span style="color:var(--accent);font-weight:600;">Active</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Points -->
+      <div class="profile-card points-display">
+        <p class="pts-label">You have</p>
+        <p class="pts-number" id="memberCredits">$0</p>
+        <p class="pts-tag">in Credits</p>
+        <a href="#redeem" class="btn btn-black btn-sm">Use Credits</a>
+      </div>
+
+      <!-- Card 3: Tier status -->
+      <div class="profile-card tier-panel">
+        <span class="tier-chip">Current Tier</span>
+        <p class="tier-name-big" id="memberTier">Bare Member</p>
+        <p class="tier-note" id="tierNote">Keep investing in yourself — your next tier is closer than you think.</p>
+        <div class="progress-track">
+          <div class="progress-fill" id="tierProgress" style="width:10%;"></div>
+        </div>
+        <div class="progress-labels">
+          <span id="tierLower">Bare</span>
+          <span id="tierUpper">Bold</span>
+        </div>
+        <a href="#tiers" class="btn btn-black btn-sm">Tier Details</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     MANIFESTO BANNER  (assets/images/img-banner.jpg)
+══════════════════════════════════════════════ -->
+<div class="manifesto-band">
+  <div class="manifesto-overlay"></div>
+  <div class="manifesto-text">
+    <p class="manifesto-eyebrow">The Verve Intimate Society</p>
+    <p class="manifesto-quote">A society for those who don't just<br>own their power — they inspire<br>others to find theirs.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     HOW TO EARN POINTS
+══════════════════════════════════════════════ -->
+<section class="section section-white">
+  <div class="container">
+    <h2 class="section-title">how to earn <em>credits</em></h2>
+    <div class="gold-rule"></div>
+
+    <div class="earn-grid">
+
+      <!-- Shop -->
+      <div class="earn-card">
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <p class="earn-title">Your Investment</p>
+        <p class="earn-pts">$1 per $10 spent</p>
+        <p class="earn-desc">Earn credits for investing in artwork, albums or digital portfolios at your last visit to Verve.</p>
+        <a href="https://www.verveintimate.com.au/checkout/?add-to-cart=30707&stype=intimate_individual_female_shoot" target="_blank" class="btn btn-black btn-sm">Shop</a>
+      </div>
+
+      <!-- Instagram -->
+      <div class="earn-card">
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </div>
+        <p class="earn-title">Follow on Instagram</p>
+        <p class="earn-pts">$20 credit</p>
+        <p class="earn-desc">Follow @verve_intimate on Instagram and earn instantly.</p>
+        <a href="https://www.instagram.com/verve_intimate" target="_blank" class="btn btn-black btn-sm">Follow</a>
+      </div>
+
+      <!-- TikTok -->
+      <div class="earn-card">
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        </div>
+        <p class="earn-title">Follow on TikTok</p>
+        <p class="earn-pts">$20 credit</p>
+        <p class="earn-desc">Follow @verveintimate on TikTok and earn instantly.</p>
+        <a href="https://www.tiktok.com/@verveintimate" target="_blank" class="btn btn-black btn-sm">Follow</a>
+      </div>
+
+      <!-- Refer -->
+      <div class="earn-card">
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p class="earn-title">Refer a Friend</p>
+        <p class="earn-pts">$150 credit</p>
+        <p class="earn-desc">Send a friend a referral invite. They receive a complimentary luxury intimate robe on arrival — a beautiful piece to keep and take away from their shoot. You earn $150 in credits when they book.</p>
+        <a href="#refer" class="btn btn-black btn-sm">Refer Now</a>
+      </div>
+
+      <!-- Share Images -->
+      <div class="earn-card">
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </div>
+        <p class="earn-title">Share Your Images</p>
+        <p class="earn-pts">$60 credit</p>
+        <p class="earn-desc">Give us permission to share your images on our website or social media and earn $60 in credits. Your comfort and privacy are always our priority.</p>
+        <a href="#consent" class="btn btn-black btn-sm">Opt In</a>
+      </div>
+
+      <!-- Review -->
+      <div class="earn-card">
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><polyline points="8 10 12 14 16 10"/></svg>
+        </div>
+        <p class="earn-title">Review &amp; Share</p>
+        <p class="earn-pts">+$25 each</p>
+        <p class="earn-desc">Earn $25 in credits for every review or post you share — Google, Instagram, Reddit, and more. Each platform counts.</p>
+        <button onclick="document.getElementById('reviewModal').style.display='flex'" class="btn btn-black btn-sm" style="border:none;cursor:pointer;">Leave a Review</button>
+      </div>
+
+      <!-- Photo Review -->
+      <div class="earn-card" style="position:relative;">
+        <div style="position:absolute;top:14px;right:14px;background:var(--gold);color:white;font-size:8px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;padding:4px 10px;">Bonus</div>
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <p class="earn-title">Add Photos or Video</p>
+        <p class="earn-pts">+$25 bonus</p>
+        <p class="earn-desc">Add photos or video to your review — your artwork reveal, album unboxing, or final images — and earn an extra $25 in credits.</p>
+        <button onclick="document.getElementById('reviewModal').style.display='flex'" class="btn btn-black btn-sm" style="border:none;cursor:pointer;">Add Photos</button>
+      </div>
+
+      <!-- Film Testimonial -->
+      <div class="earn-card">
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </div>
+        <p class="earn-title">Film Testimonial</p>
+        <p class="earn-pts">$100 credit</p>
+        <p class="earn-desc">Send us a film testimonial sharing your experience, or a film of you unveiling your album or artwork, and receive $100 in credits.</p>
+        <button onclick="document.getElementById('reviewModal').style.display='flex'" class="btn btn-black btn-sm" style="border:none;cursor:pointer;">Submit Film</button>
+      </div>
+
+      <!-- Image Permission -->
+      <div class="earn-card">
+        <div class="earn-icon">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <p class="earn-title">Image Permission</p>
+        <p class="earn-pts">+$50 credit</p>
+        <p class="earn-desc">Give us permission to share select images from your session in our portfolio or marketing, and we'll add $50 to your credits as a thank you.</p>
+        <a href="#consent" class="btn btn-black btn-sm">Give Permission</a>
+      </div>
+
+      <!-- Nannini image panel -->
+      <div style="background-image:url('assets/images/nannini.png');background-size:cover;background-position:center top;grid-column:span 3;min-height:280px;"></div>
+
+    </div>
+
+    <!-- Submit CTA -->
+    <div style="text-align:center;margin-top:52px;padding:52px 40px;background:var(--cream-dark);border:1px solid var(--border);">
+      <p style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px;">Already Earned?</p>
+      <h3 style="font-family:'Cinzel',serif;font-size:clamp(18px,2.5vw,28px);font-weight:400;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px;">Submit Your Reward</h3>
+      <p style="font-size:13px;color:var(--muted);line-height:1.9;max-width:480px;margin:0 auto 36px;">Completed a review, referred a friend, or sent us your film? Submit your action below and we'll update your credit balance within 1–2 business days.</p>
+      <a href="https://forms.gle/u5tqBeihEhK7mCmV8" target="_blank" class="btn btn-gold" style="padding:18px 56px;">Submit Your Reward</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     GALLERY STRIP  (swap: assets/images/gallery-1/2/3/4.jpg)
+══════════════════════════════════════════════ -->
+<div class="gallery-strip" role="img" aria-label="Verve Intimate portraits">
+  <div class="gallery-panel"></div>
+  <div class="gallery-panel"></div>
+  <div class="gallery-panel"></div>
+  <div class="gallery-panel"></div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     REFER A FRIEND
+══════════════════════════════════════════════ -->
+<section class="section section-white" id="refer">
+  <div class="container" style="max-width:820px;">
+
+    <p class="hero-eyebrow" style="margin-bottom:18px;color:var(--accent);">Give a Gift. Get Rewarded.</p>
+    <h2 class="section-title">refer a <em>friend</em></h2>
+    <div class="gold-rule"></div>
+
+    <!-- Benefit pills -->
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:56px;">
+      <div style="display:flex;align-items:center;gap:16px;background:var(--cream);border:1px solid var(--border);border-top:2px solid var(--accent);padding:22px 30px;min-width:280px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+        <div>
+          <p style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:5px;">Your Friend Gets</p>
+          <p style="font-size:14px;color:var(--black);letter-spacing:0.02em;">A complimentary Intimate Robe on arrival</p>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;background:var(--cream);border:1px solid var(--border);border-top:2px solid var(--accent);padding:22px 30px;min-width:280px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <div>
+          <p style="font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:5px;">You Receive</p>
+          <p style="font-size:14px;color:var(--black);letter-spacing:0.02em;">$150 credit when they book</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Robe image -->
+    <div style="text-align:center;margin-bottom:56px;">
+      <p style="font-family:'Montserrat',sans-serif;font-size:8px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;">The Gift Your Friend Receives</p>
+      <img src="assets/images/robe-vi.png" alt="Verve Intimate Robe" style="width:100%;max-width:360px;object-fit:cover;display:inline-block;" />
+      <p style="font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:var(--muted);margin-top:16px;line-height:1.75;">A complimentary Verve Intimate robe — a beautiful piece to keep and take away from their shoot.</p>
+    </div>
+
+    <!-- Referral form -->
+    <div style="background:var(--cream);border:1px solid var(--border);padding:52px 48px;">
+      <p style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:36px;text-align:center;">Send Your Referral</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+        <div>
+          <label style="display:block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Your Friend's Name</label>
+          <input type="text" placeholder="e.g. Sarah" style="width:100%;background:var(--white);border:1px solid var(--border);color:var(--black);padding:15px 16px;font-family:'Montserrat',sans-serif;font-size:13px;outline:none;letter-spacing:0.03em;" />
+        </div>
+        <div>
+          <label style="display:block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Their Email Address</label>
+          <input type="email" placeholder="e.g. sarah@email.com" style="width:100%;background:var(--white);border:1px solid var(--border);color:var(--black);padding:15px 16px;font-family:'Montserrat',sans-serif;font-size:13px;outline:none;letter-spacing:0.03em;" />
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Their Mobile Number <span style="opacity:0.55;font-size:8px;">(optional)</span></label>
+        <input type="tel" placeholder="e.g. 0412 345 678" style="width:100%;background:var(--white);border:1px solid var(--border);color:var(--black);padding:15px 16px;font-family:'Montserrat',sans-serif;font-size:13px;outline:none;letter-spacing:0.03em;" />
+      </div>
+
+      <div style="margin-bottom:36px;">
+        <label style="display:block;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Personal Message <span style="opacity:0.55;font-size:8px;">(optional)</span></label>
+        <textarea rows="4" placeholder="Tell them why you loved your Verve experience..." style="width:100%;background:var(--white);border:1px solid var(--border);color:var(--black);padding:15px 16px;font-family:'Montserrat',sans-serif;font-size:13px;outline:none;letter-spacing:0.03em;resize:vertical;line-height:1.7;"></textarea>
+      </div>
+
+      <button onclick="sendReferral()" class="btn btn-gold" style="width:100%;text-align:center;padding:20px;">Send Referral Invite</button>
+
+      <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:22px;letter-spacing:0.03em;line-height:1.85;">Your friend will receive a personalised email and/or SMS from Verve Intimate with their exclusive referral offer. Points are credited to your account once their booking is confirmed.</p>
+    </div>
+
+    <!-- Add another -->
+    <div style="text-align:center;margin-top:28px;">
+      <button onclick="addAnotherReferral()" style="background:none;border:none;color:var(--muted);font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;text-decoration:underline;">+ Add Another Friend</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     AMBASSADOR PROGRAM  (swap: assets/images/ambassador.jpg = B&W artistic portrait)
+══════════════════════════════════════════════ -->
+<section style="background:var(--cream);">
+  <div class="ambassador-split">
+
+    <!-- Left: photo panel -->
+    <div class="ambassador-img" role="img" aria-label="Verve Intimate ambassador">
+    </div>
+
+    <!-- Right: content -->
+    <div class="ambassador-content">
+      <p style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px;">Exclusive Opportunity</p>
+      <h2 class="section-title" style="text-align:left;margin-bottom:12px;">Become an <em>Ambassador</em></h2>
+      <div style="width:40px;height:1px;background:var(--accent);margin-bottom:28px;"></div>
+      <p style="font-size:12.5px;line-height:1.85;color:#555;letter-spacing:0.04em;margin-bottom:40px;">Share your Verve Intimate experience with your community — and earn $150 in credits for every booking made with your unique code. Anyone who books using your code also receives a luxury intimate robe at their shoot — a beautiful piece to keep and take away — as our gift to them. The more you share, the more you both gain.</p>
+
+    <!-- How it works -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:52px;">
+
+      <div style="background:var(--white);padding:44px 32px;text-align:center;">
+        <div style="width:52px;height:52px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--white);">1</div>
+        <p style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;">Get Your Code</p>
+        <p style="font-size:12px;color:var(--muted);line-height:1.7;">Every Society member receives a unique referral code automatically — no approval needed. Find your code below.</p>
+      </div>
+
+      <div style="background:var(--white);padding:44px 32px;text-align:center;position:relative;">
+        <div style="width:52px;height:52px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--white);">2</div>
+        <p style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;">Share Your Experience</p>
+        <p style="font-size:12px;color:var(--muted);line-height:1.7;">Post about your Verve shoot on social media, stories, blogs or anywhere your community is listening. Get creative — showcase your images, an unveiling of your artwork or album, or a video testimonial or review of your experience.</p>
+      </div>
+
+      <div style="background:var(--white);padding:44px 32px;text-align:center;">
+        <div style="width:52px;height:52px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--white);">3</div>
+        <p style="font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;">Earn $150 in Credits</p>
+        <p style="font-size:12px;color:var(--muted);line-height:1.7;">For every person who books using your code, $150 in credits is added to your account — and they receive a luxury intimate robe at their shoot, a beautiful piece to keep and take away.</p>
+      </div>
+
+    </div>
+
+    <!-- Ambassador code mockup -->
+    <div style="background:var(--cream);border:1px solid var(--border);border-top:3px solid var(--accent);padding:44px;text-align:center;max-width:560px;margin:0 auto 40px;">
+      <p style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;">Your Ambassador Code</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;letter-spacing:0.2em;color:var(--accent);margin-bottom:8px;">HOLLY20</p>
+      <p style="font-size:12px;color:var(--muted);letter-spacing:0.08em;margin-bottom:28px;">Share this code with your community</p>
+      <button onclick="copyCode()" style="background:var(--black);border:none;color:white;font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;padding:14px 32px;cursor:pointer;" id="copyBtn">Copy Code</button>
+    </div>
+
+    <!-- Perks list -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:760px;margin:0 auto 48px;">
+      <div style="text-align:center;padding:24px 16px;border-top:2px solid var(--gold);">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--gold);margin-bottom:6px;">200</p>
+        <p style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">Points per booking</p>
+      </div>
+      <div style="text-align:center;padding:24px 16px;border-top:2px solid var(--gold);">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--gold);margin-bottom:6px;">No limit</p>
+        <p style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">On bookings earned</p>
+      </div>
+      <div style="text-align:center;padding:24px 16px;border-top:2px solid var(--gold);">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--gold);margin-bottom:6px;">Auto</p>
+        <p style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">Points credited instantly</p>
+      </div>
+    </div>
+
+    <div style="text-align:left;">
+      <a href="#refer" class="btn btn-black" style="padding:18px 56px;">Start Sharing &amp; Earning</a>
+    </div>
+
+    </div><!-- /ambassador-content -->
+  </div><!-- /ambassador-split -->
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     REDEEM YOUR POINTS
+══════════════════════════════════════════════ -->
+<section class="section section-cream" id="redeem">
+  <div class="container">
+    <h2 class="section-title">use your <em>credits</em></h2>
+    <div class="gold-rule"></div>
+
+    <!-- Points balance display -->
+    <div style="background:var(--black);color:var(--white);padding:30px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px;">
+      <div style="display:flex;align-items:baseline;gap:16px;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:62px;font-weight:300;line-height:1;">$500</p>
+        <div>
+          <p style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--accent-pale);margin-bottom:5px;">in Credits</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:rgba(255,255,255,0.55);">Fierce Member</p>
+        </div>
+      </div>
+      <p style="font-size:11.5px;color:rgba(255,255,255,0.65);line-height:1.85;letter-spacing:0.04em;max-width:340px;">Credits marked <span style="color:var(--accent-pale);font-weight:500;letter-spacing:0.08em;">Available</span> are unlocked with your current balance. Keep earning to access more.</p>
+    </div>
+
+    <div class="tab-nav-sm">
+      <button class="tab-btn active">Available</button>
+      <button class="tab-btn">Redeemed</button>
+    </div>
+
+    <!-- Shoot Experiences -->
+    <p style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:center;margin-bottom:16px;">Shoot Experiences</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:1px;">
+
+      <!-- Mini Shoot — LOCKED -->
+      <div class="redeem-card" style="position:relative;">
+        <div style="position:absolute;top:14px;right:14px;background:var(--black);color:var(--accent-pale);font-size:8px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:5px 10px;display:flex;align-items:center;gap:5px;">
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          $995 to go
+        </div>
+        <div class="redeem-icon" style="opacity:0.5;">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <p class="redeem-amount">Mini Shoot</p>
+        <p class="redeem-pts-label">$1,495 in credits</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--accent);margin-bottom:8px;letter-spacing:0.03em;">Valued at A$1,495</p>
+        <p class="redeem-desc">A 45 minute in studio shoot with 10 high res digital files. Does not include hair and make up.</p>
+        <a href="#" class="btn btn-black btn-sm" style="width:100%;text-align:center;opacity:0.35;pointer-events:none;">Locked</a>
+      </div>
+
+      <!-- New Shoot Credit — AVAILABLE -->
+      <div class="redeem-card" style="position:relative;" id="shootCard">
+        <div style="position:absolute;top:14px;right:14px;background:var(--accent);color:white;font-size:8px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:5px 10px;">Available</div>
+        <div class="redeem-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="redeem-amount">Book a New Shoot</p>
+        <p class="redeem-pts-label">$295 in credits</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:var(--accent);margin-bottom:8px;letter-spacing:0.03em;">Covers shoot fee, hair &amp; makeup, and one fine art print</p>
+        <p class="redeem-desc">Redeem $295 in credits to cover your shoot fee, professional hair and makeup artistry, plus one bespoke fine art print — everything you need for the full Verve experience.</p>
+
+        <!-- Before redeem -->
+        <div id="shootRedeem">
+          <button onclick="revealCode()" class="btn btn-black btn-sm" style="width:100%;text-align:center;">Redeem</button>
+        </div>
+
+        <!-- After redeem — hidden until clicked -->
+        <div id="shootCode" style="display:none;width:100%;">
+          <p style="font-size:9px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Your Discount Code</p>
+          <div style="background:var(--black);color:var(--white);padding:14px 20px;text-align:center;letter-spacing:0.28em;font-family:'Cinzel',serif;font-size:16px;margin-bottom:6px;cursor:pointer;user-select:all;" onclick="copyDiscountCode(this)" title="Click to copy">SOCIETY300</div>
+          <p style="font-size:10px;color:var(--muted);text-align:center;margin-bottom:20px;letter-spacing:0.06em;">Use this code at checkout · Click to copy</p>
+          <a href="https://www.verveintimate.com.au/checkout/?add-to-cart=30707&stype=intimate_individual_female_shoot" target="_blank" class="btn btn-gold" style="width:100%;text-align:center;display:block;">Book Now →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Gallery & Artwork -->
+    <p style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:center;margin:24px 0 16px;">Gallery &amp; Artwork</p>
+
+
+    <div style="border:1px solid var(--border);">
+
+      <!-- Pictime Gallery — AVAILABLE -->
+      <div class="redeem-card" style="position:relative;flex-direction:row;align-items:center;gap:32px;padding:36px 40px;text-align:left;">
+        <div style="position:absolute;top:14px;right:14px;background:var(--accent);color:white;font-size:8px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;padding:5px 10px;">Available</div>
+        <div class="redeem-icon" style="flex-shrink:0;margin:0;">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <div style="flex:1;">
+          <p class="redeem-amount" style="text-align:left;">Gallery &amp; Artwork Access</p>
+          <p class="redeem-pts-label" style="text-align:left;">from $300 in credits</p>
+          <p class="redeem-desc" style="text-align:left;margin-bottom:20px;">Receive a personal link to your private Pictime gallery — view your curated images, download high-resolution digital files, and order fine art prints, framed artwork, or albums directly from your gallery store.</p>
+          <a href="#" id="galleryRedeemBtn" class="btn btn-black btn-sm" style="text-align:center;">Redeem</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     VIP TIERS & PERKS
+══════════════════════════════════════════════ -->
+<section class="section section-white" id="tiers">
+  <div class="container">
+    <h2 class="section-title">vip tiers <em>&amp; perks</em></h2>
+    <div class="gold-rule"></div>
+
+    <!-- Tier progress icons -->
+    <div style="display:flex; justify-content:center; align-items:center; gap:20px; margin-bottom:52px; flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="width:52px;height:52px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;background:var(--black);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <p style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;">Bare</p>
+        <p style="font-size:9px;color:var(--muted);letter-spacing:0.06em;">A$0–$1,500</p>
+      </div>
+      <div style="width:40px;height:1px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="width:52px;height:52px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;background:var(--black);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <p style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;">Bold</p>
+        <p style="font-size:9px;color:var(--muted);letter-spacing:0.06em;">A$1,500–$3,000</p>
+      </div>
+      <div style="width:40px;height:1px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="width:52px;height:52px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;background:var(--black);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <p style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;">Fierce</p>
+        <p style="font-size:9px;color:var(--muted);letter-spacing:0.06em;">A$3,000–$4,500</p>
+      </div>
+      <div style="width:40px;height:1px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="width:52px;height:52px;border:1.5px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;background:var(--cream-dark);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <p style="font-size:9px;letter-spacing:0.14em;text-transform:uppercase;font-weight:500;">Icon</p>
+        <p style="font-size:9px;color:var(--muted);letter-spacing:0.06em;">A$4,501+</p>
+      </div>
+    </div>
+
+    <table class="tiers-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th><span class="tname">Bare</span><span class="tspend">A$0–$1,500</span></th>
+          <th><span class="tname">Bold</span><span class="tspend">A$1,500–$3,000</span></th>
+          <th class="hi"><span class="tname">Fierce</span><span class="tspend">A$3,000–$4,500</span></th>
+          <th><span class="tname">Icon</span><span class="tspend">A$4,501+</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Annual Spend</td>
+          <td>A$0–$1,500</td>
+          <td>A$1,500–$3,000</td>
+          <td class="hi">A$3,000–$4,500</td>
+          <td>A$4,501+</td>
+        </tr>
+        <tr>
+          <td>Earn Dollars</td>
+          <td>$1 per $10</td>
+          <td>$1 per $10</td>
+          <td class="hi">$1 per $10</td>
+          <td>$1 per $10</td>
+        </tr>
+        <tr>
+          <td>Early Access to Launches &amp; Sales</td>
+          <td>—</td>
+          <td><span class="chk">✓</span></td>
+          <td class="hi"><span class="chk">✓</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Exclusive Event Access</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="hi"><span class="chk">✓</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Free Shoot Upgrade of Extra Time at Your Next Shoot</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="hi">—</td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Exclusive Themed Offsite Shoots — First Access</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="hi"><span class="chk">✓</span></td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+        <tr>
+          <td>Invited to Model for Verve Ad Campaigns</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="hi">—</td>
+          <td><span class="chk">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     IMAGE CONSENT
+══════════════════════════════════════════════ -->
+<section class="section section-white" id="consent">
+  <div class="container" style="max-width:680px;">
+
+    <h2 class="section-title">Image <em>Permission</em></h2>
+    <div class="gold-rule"></div>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2vw,22px);text-align:center;color:var(--black);line-height:1.7;margin-bottom:16px;">"The images we capture together belong to you — and sometimes, with your blessing, we'd love to share them."</p>
+    <p style="font-size:13px;color:var(--muted);text-align:center;line-height:2;max-width:520px;margin:0 auto 48px;">From time to time we may select a handful of images from your session to feature in our portfolio or marketing. We will always choose with care, with taste, and with the same respect we bring to every shoot. Your permission below means the world to us.</p>
+
+    <div style="background:var(--cream);border:1px solid var(--border);padding:48px 52px;" id="consentForm">
+
+      <!-- Consent checkbox -->
+      <label style="display:flex;align-items:flex-start;gap:18px;cursor:pointer;margin-bottom:36px;">
+        <input type="checkbox" id="consentCheck" style="width:18px;height:18px;margin-top:3px;flex-shrink:0;accent-color:var(--accent);cursor:pointer;">
+        <span style="font-size:13px;color:var(--black);line-height:1.9;">I give Verve Intimate permission to select and use images from my session in their portfolio and marketing materials. I trust them to choose beautifully.</span>
+      </label>
+
+      <!-- Signature -->
+      <p style="font-size:9px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Your Full Name — as signature</p>
+      <input type="text" id="consentName" placeholder="Type your full name" style="width:100%;border:none;border-bottom:1px solid var(--border);background:transparent;padding:12px 0;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--black);outline:none;margin-bottom:36px;letter-spacing:0.04em;">
+
+      <button onclick="submitConsent()" class="btn btn-gold" style="width:100%;padding:18px;">Confirm Permission</button>
+    </div>
+
+    <!-- Confirmed state (hidden until submitted) -->
+    <div id="consentConfirmed" style="display:none;background:var(--cream);border:1px solid var(--border);padding:48px 52px;text-align:center;">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" style="margin-bottom:20px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <p style="font-family:'Cinzel',serif;font-size:16px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;">Thank You, <span id="confirmedName"></span></p>
+      <p style="font-size:13px;color:var(--muted);line-height:1.9;">Your permission has been noted. We promise to honour it with the same intention and care you brought to your shoot.</p>
+      <div style="margin-top:24px;padding:18px 24px;background:var(--black);color:var(--white);display:inline-block;">
+        <span style="font-size:9px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600;color:var(--accent-pale);">Credits Added</span>
+        <p style="font-family:'Cinzel',serif;font-size:26px;font-weight:400;letter-spacing:0.1em;margin-top:4px;">+$50</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     RETURN CTA BANNER
+══════════════════════════════════════════════ -->
+<section style="background-image:url('assets/images/simpson.jpg');background-size:cover;background-position:center 30%;background-color:var(--black);padding:110px 40px;text-align:center;position:relative;">
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(20,10,8,0.78) 0%,rgba(74,16,32,0.52) 50%,rgba(20,10,8,0.75) 100%);"></div>
+  <div style="position:relative;z-index:1;">
+    <p style="font-family:'Montserrat',sans-serif;font-size:9px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:var(--accent-pale);margin-bottom:20px;">Your Credits Are Waiting</p>
+    <h2 style="font-family:'Cinzel',serif;font-size:clamp(22px,3.5vw,42px);font-weight:400;letter-spacing:0.2em;text-transform:uppercase;color:var(--white);margin-bottom:18px;">Ready for Your <em style="font-style:normal;color:var(--accent-light);">Next Chapter?</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,2vw,20px);color:rgba(255,255,255,0.7);margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.7;">Every credit you've earned brings your next Verve experience closer. Share your love for the brand, refer a friend, and put those credits toward your next shoot.</p>
+    <a href="https://www.verveintimate.com.au/checkout/?add-to-cart=30707&stype=intimate_individual_female_shoot" target="_blank" class="btn btn-accent">Book Your Next Shoot</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FAQs
+══════════════════════════════════════════════ -->
+<section class="section section-cream">
+  <div class="container" style="max-width:740px;">
+    <h2 class="section-title">FAQ<em>s</em></h2>
+    <div class="gold-rule"></div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>What is the Verve Intimate Society?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">The Verve Intimate Society is our exclusive loyalty and rewards program. As a member, you earn points every time you shop, engage, and share — then redeem those points for discounts on future purchases. The more you spend, the higher your tier and the more luxurious the rewards.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>How Do I Earn Points?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">You earn credits on your investment in artwork or digital packages from your shoot ($1 per $10 spent), joining the program (free, no credit), reviewing or posting about your experience ($50 per platform — Google, Instagram, Reddit, and more each count separately, plus $50 bonus when you add photos or video such as an artwork reveal or album unboxing), following us on Instagram ($20) or TikTok ($20), referring friends ($200 each), and giving us permission to share your images online ($60).</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>How Do I View My Point Balance?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">Your point balance is displayed at the top of this page when logged in, and in your account dashboard. Your balance updates in real time after every qualifying action.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>How Do I Redeem My Verve Intimate Society Points?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">Head to the "Redeem Your Points" section on this page, choose your reward, and click Redeem. If you select Buy Artwork, you will be sent a link to our store containing your images where you can order artwork, prints or digital files. If you are redeeming a shoot, you will receive a unique discount code to apply at checkout on your next booking.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Will My Points Expire?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">Your credits never expire. Build them up at your own pace and redeem them whenever you're ready.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Can I Redeem Multiple Rewards in One Transaction?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">Only one discount code can be applied per order. However, you can save additional codes for future purchases — they're valid for 6 months from issue date.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Is There a Limit to the Points I Can Earn?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">No limit. You can earn as many as you like. Build them up or hold them as they do not expire.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Can I Use My Credits Toward My Next Shoot?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">Absolutely — that's what they're for. Redeem your credits for a New Shoot Credit ($295) to cover your shoot fee, hair and makeup, and one fine art print, or save up for a full Mini Shoot experience ($1,495). Head to the "Use Your Credits" section to see what's available with your current balance.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>How Do I Claim Credits for a Review, Referral or Film Testimonial?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">Once you've completed your action — posted a review, referred a friend, or filmed your testimonial — simply submit it through our rewards form and we'll update your credit balance within 1–2 business days. <a href="https://forms.gle/u5tqBeihEhK7mCmV8" target="_blank">Click here to submit your reward →</a><br><br>For reviews and posts, paste the link to your Google review, Instagram post, Reddit thread, or TikTok, or upload a screenshot as proof. For film testimonials, you can upload your file directly through the form or share a Google Drive or Dropbox link if the file is large. For referrals, just include your friend's name and email and we'll match it to their booking.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>My Question Wasn't Answered Here. Where Can I Ask?</span>
+        <span class="faq-plus">+</span>
+      </div>
+      <div class="faq-a">We'd love to help! Reach out at <a href="mailto:info@verveintimate.com.au">info@verveintimate.com.au</a> or DM us on Instagram. Our team typically responds within 1 business day.</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     FOOTER CTA
+══════════════════════════════════════════════ -->
+<section class="footer-cta">
+  <h2>Ready to be <em>Icon?</em></h2>
+  <p>Join the Verve Intimate Society — it's free, it's fierce, and you deserve every reward.</p>
+  <a href="https://www.verveintimate.com.au/checkout/?add-to-cart=30707&stype=intimate_individual_female_shoot" target="_blank" class="btn btn-accent">Book Your Next Shoot</a>
+</section>
+
+
+<!-- ── REVIEW PLATFORM MODAL ─────────────────── -->
+<div id="reviewModal" style="display:none;position:fixed;inset:0;background:rgba(20,10,8,0.88);z-index:999;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:var(--cream);max-width:480px;width:100%;padding:48px 44px;position:relative;">
+    <button onclick="document.getElementById('reviewModal').style.display='none'" style="position:absolute;top:16px;right:20px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);">✕</button>
+    <p style="font-family:'Montserrat',sans-serif;font-size:8px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;">Leave a Review</p>
+    <h3 style="font-family:'Cinzel',serif;font-size:clamp(18px,2.5vw,24px);font-weight:400;letter-spacing:0.16em;text-transform:uppercase;color:var(--black);margin-bottom:10px;">Where Would You Like to Share?</h3>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--muted);margin-bottom:32px;">Each platform earns you $25 in credits. Choose where to leave your review.</p>
+
+    <div style="display:flex;flex-direction:column;gap:10px;">
+
+      <a href="https://www.google.com/search?q=verve+intimate+google+reviews&sca_esv=70eb24c2804218f2&biw=1368&bih=888&sxsrf=ANbL-n7YzQm86OyEclSQFIL2nQchOSLAEw%3A1779933271689&ei=V6AXaqrOKYjeseMPwq_jsAI&ved=0ahUKEwjq1YeT8NqUAxUIb2wGHcLXGCYQ4dUDCBA&uact=5&oq=verve+intimate+google+reviews&gs_lp=Egxnd3Mtd2l6LXNlcnAiHXZlcnZlIGludGltYXRlIGdvb2dsZSByZXZpZXdzMggQIRigARjDBDIIECEYoAEYwwQyCBAhGKABGMMEMggQIRigARjDBEiyHVCyA1iTEHABeAGQAQCYAfsBoAGGDKoBBTAuNi4yuAEDyAEA-AEBmAIHoALwCMICChAAGEcY1gQYsAPCAgoQIRgKGKABGMMEmAMAiAYBkAYIkgcFMS41LjGgB_4ksgcFMC41LjG4B-0IwgcDMS42yAcMgAgB&sclient=gws-wiz-serp#sv=CAMSoAIa8wEKBmxjbF9wdhImCgNwdnESH0NnMHZaeTh4TVhjelpuTnNYelUySWdZS0FCQUNHQU0SogEKA2xxaRKaAUNoMTJaWEoyWlNCcGJuUnBiV0YwWlNCbmIyOW5iR1VnY21WMmFXVjNjeUlGT0FHSUFRRmFGQmdBR0FFaURuWmxjblpsSUdsdWRHbHRZWFJsa2dFU2NHaHZkRzluY21Gd2FIbGZjM1IxWkdsdnFnRUE2Z0VjQ2hvSUNoSVdRMGxJVFRCdlowdEZTVU5CWjBsRFREZHZia1pDWncSCAoDZnZyEgExGhJsb2NhbC1wbGFjZS12aWV3ZXIgDCokCg5sY2wtcGxhY2UtdGlsZRIQcHYtL2cvMTF3M2ZzbF81NhgBMAEYCiDvkvqIAw" target="_blank" style="display:flex;align-items:center;gap:18px;padding:18px 20px;border:1px solid var(--border);background:white;text-decoration:none;color:var(--black);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <div>
+          <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:3px;">Google — Surry Hills</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--muted);">Leave a Google review for our Surry Hills studio</p>
+        </div>
+        <span style="margin-left:auto;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.16em;color:var(--accent);">+$25 →</span>
+      </a>
+
+      <a href="https://www.google.com/search?q=verve+intimate+google+reviews&sca_esv=70eb24c2804218f2&biw=1368&bih=888&sxsrf=ANbL-n7YzQm86OyEclSQFIL2nQchOSLAEw%3A1779933271689&ei=V6AXaqrOKYjeseMPwq_jsAI&ved=0ahUKEwjq1YeT8NqUAxUIb2wGHcLXGCYQ4dUDCBA&uact=5&oq=verve+intimate+google+reviews&gs_lp=Egxnd3Mtd2l6LXNlcnAiHXZlcnZlIGludGltYXRlIGdvb2dsZSByZXZpZXdzMggQIRigARjDBDIIECEYoAEYwwQyCBAhGKABGMMEMggQIRigARjDBEiyHVCyA1iTEHABeAGQAQCYAfsBoAGGDKoBBTAuNi4yuAEDyAEA-AEBmAIHoALwCMICChAAGEcY1gQYsAPCAgoQIRgKGKABGMMEmAMAiAYBkAYIkgcFMS41LjGgB_4ksgcFMC41LjG4B-0IwgcDMS42yAcMgAgB&sclient=gws-wiz-serp#sv=CAMSiQIa3AEKBmxjbF9wdhImCgNwdnESH0NnMHZaeTh4TVhaM2FqY3lNM0J6SWdZS0FCQUNHQU0SiwEKA2xxaRKDAUNoMTJaWEoyWlNCcGJuUnBiV0YwWlNCbmIyOW5iR1VnY21WMmFXVjNjeUlGT0FHSUFRRmFGQmdBR0FFaURuWmxjblpsSUdsdWRHbHRZWFJsa2dFU2NHaHZkRzluY21Gd2FIbGZjM1IxWkdsdnFnRUFpZ0lMUWxaWmNsYzVjV0pHTUhNEggKA2Z2chIBMRoSbG9jYWwtcGxhY2Utdmlld2VyIAwqJAoObGNsLXBsYWNlLXRpbGUSEHB2LS9nLzExdndqNzIzcHMYATABGAog5ciBlg8" target="_blank" style="display:flex;align-items:center;gap:18px;padding:18px 20px;border:1px solid var(--border);background:white;text-decoration:none;color:var(--black);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <div>
+          <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:3px;">Google — South Melbourne</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--muted);">Leave a Google review for our South Melbourne studio</p>
+        </div>
+        <span style="margin-left:auto;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.16em;color:var(--accent);">+$25 →</span>
+      </a>
+
+      <a href="https://www.google.com/search?q=verve+intimate+google+reviews&sca_esv=70eb24c2804218f2&biw=1368&bih=888&sxsrf=ANbL-n7YzQm86OyEclSQFIL2nQchOSLAEw%3A1779933271689&ei=V6AXaqrOKYjeseMPwq_jsAI&ved=0ahUKEwjq1YeT8NqUAxUIb2wGHcLXGCYQ4dUDCBA&uact=5&oq=verve+intimate+google+reviews&gs_lp=Egxnd3Mtd2l6LXNlcnAiHXZlcnZlIGludGltYXRlIGdvb2dsZSByZXZpZXdzMggQIRigARjDBDIIECEYoAEYwwQyCBAhGKABGMMEMggQIRigARjDBEiyHVCyA1iTEHABeAGQAQCYAfsBoAGGDKoBBTAuNi4yuAEDyAEA-AEBmAIHoALwCMICChAAGEcY1gQYsAPCAgoQIRgKGKABGMMEmAMAiAYBkAYIkgcFMS41LjGgB_4ksgcFMC41LjG4B-0IwgcDMS42yAcMgAgB&sclient=gws-wiz-serp#sv=CAMSqAIa-wEKBmxjbF9wdhImCgNwdnESH0NnMHZaeTh4TVhjelpuTmtjM1pvSWdZS0FCQUNHQU0SqgEKA2xxaRKiAUNoMTJaWEoyWlNCcGJuUnBiV0YwWlNCbmIyOW5iR1VnY21WMmFXVjNjeUlGT0FHSUFRRmFGQmdBR0FFaURuWmxjblpsSUdsdWRHbHRZWFJsa2dFU2NHaHZkRzluY21Gd2FIbGZjM1IxWkdsdnFnRUE2Z0VpQ2lBSUNoSWNRMGxCUWtsb1FVZGllV1pST0hkMFkwTnRaakJ2UVd0QlFqVnllQRIICgNmdnISATEaEmxvY2FsLXBsYWNlLXZpZXdlciAMKiQKDmxjbC1wbGFjZS10aWxlEhBwdi0vZy8xMXczZnNkc3ZoGAEwARgKIPWcqJgI" target="_blank" style="display:flex;align-items:center;gap:18px;padding:18px 20px;border:1px solid var(--border);background:white;text-decoration:none;color:var(--black);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <div>
+          <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:3px;">Google — Brisbane</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--muted);">Leave a Google review for our Brisbane studio</p>
+        </div>
+        <span style="margin-left:auto;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.16em;color:var(--accent);">+$25 →</span>
+      </a>
+
+      <a href="https://www.instagram.com/verve_intimate" target="_blank" style="display:flex;align-items:center;gap:18px;padding:18px 20px;border:1px solid var(--border);background:white;text-decoration:none;color:var(--black);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C13584" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <div>
+          <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:3px;">Instagram</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--muted);">Post a story or feed post tagging @verve_intimate</p>
+        </div>
+        <span style="margin-left:auto;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.16em;color:var(--accent);">+$25 →</span>
+      </a>
+
+
+      <a href="https://www.tiktok.com/@verveintimate" target="_blank" style="display:flex;align-items:center;gap:18px;padding:18px 20px;border:1px solid var(--border);background:white;text-decoration:none;color:var(--black);transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#010101" stroke-width="1.8" stroke-linecap="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        <div>
+          <p style="font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:3px;">TikTok</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:13px;font-style:italic;color:var(--muted);">Post a video or review on TikTok</p>
+        </div>
+        <span style="margin-left:auto;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.16em;color:var(--accent);">+$25 →</span>
+      </a>
+
+    </div>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-size:14px;font-style:italic;color:var(--muted);text-align:center;margin-top:24px;">After posting, submit via the <a href="https://forms.gle/u5tqBeihEhK7mCmV8" target="_blank" style="color:var(--accent);">credit claim form</a> to receive your credits.</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
