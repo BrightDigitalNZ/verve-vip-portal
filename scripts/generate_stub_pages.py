@@ -34,7 +34,7 @@ def nav_html(active_href):
         )
     links_str = "\n".join(links)
     return f'''<nav style="background:var(--black);padding:0 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border-dark);">
-  <a href="index.html" style="font-family:'Cinzel',serif;font-size:13px;font-weight:400;letter-spacing:0.38em;text-transform:uppercase;color:var(--white);padding:18px 0;">Verve Intimate</a>
+  <a href="index.html" style="display:flex;align-items:center;padding:13px 0;"><img src="assets/logos/logo-light.png" alt="Verve Intimate Society" style="height:34px;width:auto;display:block;" /></a>
   <div style="display:flex;align-items:stretch;gap:0;">
 {links_str}
   </div>
